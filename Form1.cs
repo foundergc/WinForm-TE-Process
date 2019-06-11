@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
 
             //Process.Start(@"C:\Users");
 
-
+             
 
             try
             {
@@ -49,25 +49,67 @@ namespace WindowsFormsApp1
 
                 //Process.Start(@"C:\Users");
                 Process.Start(@"C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe");
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+                throw;
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //object[] myarray;
+                //myarray = Process.GetProcesses();
+                //DataTable dt1 = new DataTable();
+                //DataSet ds1 = new DataSet();
+                //Array ay1 = new Array();
+                //dt1= (myarray as DataSet);
+                //ds1 = (myarray as DataSet);
+                //dt1 = myarray.ToArray();
+                //DataGridView dg1 = new DataGridView();
+                //dg1.DataSource = myarray;
+                //DataTable dt2 = dg1.DataSource as DataTable;
+                //dataGridView1.DataSource = dt2.Rows[10];
+
+
+                Process[] P1;
+                P1 = Process.GetProcesses();
+
+                //取前100条数据
+                dataGridView1.DataSource = P1.Take(100).ToArray();
 
 
             }
             catch (Exception ex)
             {
-               
                 MessageBox.Show(ex.Message);
-
                 throw;
             }
 
-
-            //Process.
-
-
-
+            //Process.GetProcessesByName();
+           //process.Dispose();
 
 
 
         }
+
+        //protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowIndex >= 0)
+        //    {
+        //        e.Row.Cells[0].Text = Convert.ToString(e.Row.DataItemIndex + 1);
+        //    }
+        //}
+
+
+        //Process.
+
     }
 }
