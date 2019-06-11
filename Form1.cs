@@ -39,9 +39,29 @@ namespace WindowsFormsApp1
             //PATH: C: \Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe
             //CreateProcess
 
-            Process.Start(@"C:\Users");
-            Process.Start(@"C:\Users");
-            Process.
+            //Process.Start(@"C:\Users");
+
+
+
+            try
+            {
+                //Process.Start(@"g:\Users");
+
+                //Process.Start(@"C:\Users");
+                Process.Start(@"C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe");
+
+
+            }
+            catch (Exception ex)
+            {
+               
+                MessageBox.Show(ex.Message);
+
+                throw;
+            }
+
+
+            //Process.
 
 
 
